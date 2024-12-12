@@ -549,7 +549,6 @@ trigger:
     
 action:
 - variables:
-    v__event:           '{{ trigger.event }}'
     v__event:           '{% if trigger.event is defined %} {{trigger.event}} {% endif %}'
     v__command:         '{% if trigger.event is defined %} {{trigger.event.data.command}} {% elif v__debug_button is not none %} debug_button {% endif %}'
     v__command_args0:   '{% if trigger.event is defined %} {{trigger.event.data.args[0]}} {% elif v__debug_button is not none %} debug_args0  {% endif %}'
