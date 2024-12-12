@@ -383,6 +383,7 @@ action:
     v__command:       '{{ trigger.event.data.command }}'
     v__command_args0: '{{ trigger.event.data.args[0] }}'
     v__command_args1: '{{ trigger.event.data.args[1] }}'
+    v__entity:        '{{ (states(v__entity_helper) | from_json).entity }}'
 - choose:
   - conditions:
     - condition: template
